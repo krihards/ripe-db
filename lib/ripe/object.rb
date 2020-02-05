@@ -39,7 +39,7 @@ module RIPE
     end
 
     def []=(key, value)
-      attributes[key] = AttributeSet.new(key) if attributes[key].nil?
+      attributes[key] = AttributeSet.new(@client, key) if attributes[key].nil?
       attributes[key].update(value)
     end
 
